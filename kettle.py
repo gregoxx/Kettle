@@ -11,14 +11,12 @@ Time = int(input("Time (seconds): "))
 
 timeList = []
 [timeList.append(i) for i in range(0, Time + 1)]
-print(timeList)
 
 TempList = []
 
 [TempList.append("{:.2f}".format(InitialTemp + (Power * timeList[j])/(Density * volume * SHC))) for j in range(0, len(timeList) - 1)]
 
 
-print(TempList)
 plt.plot(TempList)
 plt.ylabel('Temperature (°C)')
 plt.xlabel('time (seconds)')
